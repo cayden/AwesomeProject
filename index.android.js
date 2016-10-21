@@ -13,6 +13,7 @@ import {
   Dimensions,
   View
 } from 'react-native';
+import ScrollContent from './ScrollContent'
 
 export default class AwesomeProject extends Component {
   render() {
@@ -28,9 +29,24 @@ export default class AwesomeProject extends Component {
           pagingEnabled={true}
           style={styles.scrollView}>
 
-          <View style={{ backgroundColor: 'orange', height: windowHeight, width: windowWidth }} />
-          <View style={{ backgroundColor: 'red', height: windowHeight, width: windowWidth }} />
-          <View style={{ backgroundColor: 'yellow', height: windowHeight, width: windowWidth }} />
+          <ScrollContent
+              uri="http://ocef2grmj.bkt.clouddn.com/Group.png"
+              title="Shopping directly"
+              detail="Know your factories. Know your costs."
+              subDetail="Always ask why."
+              showEnter={false} />
+          <ScrollContent
+              uri="http://ocef2grmj.bkt.clouddn.com/Clothes-illustration.png"
+              title="Buy shoes"
+              detail="Know your factories. Know your costs."
+              subDetail="Always ask why."
+              showEnter={false} />
+          <ScrollContent 
+              uri="http://ocef2grmj.bkt.clouddn.com/Group1.png"
+              title="Shopping directly"
+              detail="Know your factories. Know your costs."
+              subDetail="Always ask why."
+              showEnter={true} />
 
         </ScrollView>
       </View>
@@ -40,25 +56,13 @@ export default class AwesomeProject extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flex: 1
   },
   scrollView: {
     flex: 1,
     backgroundColor: 'skyblue'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
 });
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
