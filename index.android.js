@@ -8,25 +8,31 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  ScrollView,
   Text,
+  Dimensions,
   View
 } from 'react-native';
 
 export default class AwesomeProject extends Component {
   render() {
+    var windowWidth = Dimensions.get('window').width;
+    var windowHeight = Dimensions.get('window').height;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu,{'\n'}
-          Hello I‘m ok!
-        </Text>
+
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          alwaysBounceHorizontal={true}
+          pagingEnabled={true}
+          style={styles.scrollView}>
+
+          <View style={{ backgroundColor: 'orange', height: windowHeight, width: windowWidth }} />
+          <View style={{ backgroundColor: 'red', height: windowHeight, width: windowWidth }} />
+          <View style={{ backgroundColor: 'yellow', height: windowHeight, width: windowWidth }} />
+
+        </ScrollView>
       </View>
     );
   }
@@ -38,6 +44,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  scrollView: {
+    flex: 1,
+    backgroundColor: 'skyblue'
   },
   welcome: {
     fontSize: 20,
